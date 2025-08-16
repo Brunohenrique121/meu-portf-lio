@@ -179,10 +179,17 @@ nav ul {
 }
 
 #sobre-mim h1 {
-    font-size: 5rem;
+    font-size: 5rem; /* tamanho original */
     margin-bottom: 1rem;
     font-family: 'DOCALLISME ON STREET', Arial, sans-serif;
     color: #ffffffda; 
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #sobre-mim h1 {
+        font-size: 2.5rem; /* reduz no celular */
+    }
 }
 
 #sobre-mim h2 {
@@ -211,11 +218,26 @@ nav ul {
 
 /* Mantenha a regra para telas menores, se necessário, mas pode ser simplificada */
 @media (max-width: 768px) {
-    .btn-download {
-        position: static;
-        right: auto;
-        margin: 1rem auto;
-        /* Se o botão for pequeno, não precisa de display: block */
+    header {
+        flex-direction: column; /* Logo em cima, menu embaixo */
+        align-items: center;
+        text-align: center;
+    }
+
+    .icone-cabecalho {
+        width: 120px; /* Reduz o tamanho do logo */
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column; /* Links ficam empilhados */
+        gap: 0.8rem;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem; /* Menor no mobile */
+        padding: 0.5rem;
     }
 }
 .btn-download:hover {
